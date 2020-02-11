@@ -1,0 +1,42 @@
+<div class="container custom-container-2">
+  
+    <!-- Tabla de empleados, se oculta cuando no existen registros -->
+   
+    
+    <div *ngIf="camisetas.length !== 0">
+        <br>
+        <h4>Listado de Camisetas</h4>
+        <hr>
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <thead class="table-info">
+                    <tr class="text">
+                        <th scope="col">Id camiseta</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Primera Imagen</th>
+                        <th scope="col">Segunda Imagen</th>
+                        <th scope="col">Tercera Imagen</th>
+                        <th scope="col">Opciones</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let camiseta of camisetas">
+                        <td class="text"> <b>{{camiseta.idCamiseta}}</b></td>
+                        <td class="text">{{camiseta.precio}}</td>
+                        <td> <img class="ima" src="{{camiseta.imagen}}" alt=""></td>
+                        <td><img class="ima" src="{{camiseta.imagen2}}" alt=""></td>
+                        <td><img class="ima" src="{{camiseta.imagen3}}" alt=""></td>
+                        <td><br>
+                            <br>
+                            <button class="btn btn-warning" routerLink="/gestion/{{camiseta.idCamiseta}}"> <b>Modificar</b>  </button>
+                            <br>
+                            <br>
+                            <button class="btn btn-danger" (click)="eliminarCamiseta(camiseta.idCamiseta)"> <b>Eliminar</b></button>
+                           
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>

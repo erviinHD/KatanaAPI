@@ -1,0 +1,29 @@
+<div class="container">
+    <br>
+    <h4>Actualizar Camisetas</h4>
+    <hr>
+    
+        <div class="form-group">
+          <label >Precio</label>
+          <input type="text"  [(ngModel)]="camisetaData.precio" class="form-control" placeholder="0.0">
+        </div>
+        <div class="form-group">
+          <label  >Primera Imagen</label>
+          <input type="text" [(ngModel)]="camisetaData.imagen"  class="form-control" placeholder="url imagen">
+        </div>
+        <div class="form-group">
+            <label  >Segunda Imagen</label>
+            <input type="text" [(ngModel)]="camisetaData.imagen2" class="form-control" placeholder="url imagen">
+          </div>
+          <div class="form-group">
+            <label  >Tercera Imagen</label>
+            <input type="text" [(ngModel)]="camisetaData.imagen3" class="form-control" placeholder="url imagen">
+          </div>
+
+      
+
+        <!-- agregamos ngIf-->
+        <button type="submit" class="btn btn-warning btn-lg btn-block" (click)="updateShirt()">Actualizar</button>
+          <br>
+  
+</div>
